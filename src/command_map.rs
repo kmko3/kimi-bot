@@ -1,18 +1,22 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, net::TcpStream};
 
 pub fn trigger_lurk(_message: Option<&str>) -> String {
-    String::from("lurk")
+    println!("lurk");
+    String::from("I'm lurking")
 }
 
 pub fn trigger_checkin(_message: Option<&str>) -> String {
+    println!("checkin");
     String::from("checkin")
 }
 
 pub fn trigger_help(_message: Option<&str>) -> String {
+    println!("help");
     String::from("help")
 }
 
 pub fn trigger_commands(_message: Option<&str>) -> String {
+    println!("commands");
     String::from("trigger_commands")
 }
 

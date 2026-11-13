@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, net::TcpStream};
 
 pub fn check_if_command_used(input: &str) -> bool {
     input.starts_with('$')
@@ -7,8 +7,9 @@ pub fn check_if_command_used(input: &str) -> bool {
 pub fn trigger_exact_command(
     commands: &HashMap<String, fn(Option<&str>) -> String>,
     input: &str,
-    ) -> String {
+) -> String {
     let command = input.split(' ').next().unwrap();
+    // println!("{command:?}");
 
     if let Some(com_func) = commands.get(command) {
         com_func(Some(input))
@@ -49,6 +50,3 @@ pub fn trigger_exact_command(
 //         println!("{}", command_result);
 //     }
 // }
-
-
-
